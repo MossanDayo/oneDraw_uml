@@ -1,2 +1,2 @@
 # One hour drawing UML models
-深夜の真剣UMLモデリング60分一本勝負
+* 制限時間60分でUMLを描く
