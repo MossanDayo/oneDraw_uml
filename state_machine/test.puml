@@ -1,5 +1,4 @@
-@startuml
-scale 350 width
+@startuml test
 [*] -> NotShooting
 
 state NotShooting {
