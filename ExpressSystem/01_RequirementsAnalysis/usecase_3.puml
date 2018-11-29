@@ -1,0 +1,43 @@
+@startuml ExpressSystem
+skinparam packageStyle rect
+left to right direction
+
+note "アクター目線" as N1
+
+actor 依頼人
+actor 集配担当者
+actor 受取人
+
+rectangle 自動搬送システム {
+    集配担当者 -- (収集を指示する)
+    (荷物を依頼する) -- 依頼人
+    集配担当者 -- (荷物を降ろす)
+    集配担当者 -- (荷物を載せる)
+    (荷物を受け取る) -- 受取人
+}
+
+note "収集指示～依頼先到着まで" as n1
+(収集を指示する) .. n1
+note "荷物依頼～集配センター到着まで" as n2
+(荷物を依頼する) .. n2
+note "荷物を降ろす～引き継ぎ依頼メール送信まで" as n3
+(荷物を降ろす) .. n3
+note "荷物を載せる～受取先到着まで" as n4
+(荷物を載せる) .. n4
+note "荷物受取～集配センター到着まで" as n5
+(荷物を受け取る) .. n5
+
+' 順番整理
+(収集を指示する) .[hidden]left. (荷物を依頼する)
+(荷物を依頼する) .[hidden]left. (荷物を降ろす)
+(荷物を降ろす) .[hidden]left. (荷物を載せる)
+(荷物を載せる) .[hidden]left. (荷物を受け取る)
+
+依頼人 .[hidden]left. n1
+n1 .[hidden] n2
+n2 .[hidden] n3
+n3 .[hidden] n4
+n4 .[hidden] n5
+n5 .[hidden]right. 受取人
+
+@enduml
