@@ -19,8 +19,8 @@ rectangle 自動搬送システム as system {
     note right of (配達する) : 荷物依頼～受取先到着まで
 
     受取人 -- (帰還する)
-    note right of (帰還する) : 荷物受取り～集配センター到着まで}
-
+    note right of (帰還する) : 荷物受取り～集配センター到着まで
+}
 
 ' 順番整理
 集配担当者 .[hidden] 依頼人
